@@ -1,1 +1,2 @@
-# Advanced_Node_Cache
+# AdvancedNodeStarter
+Starting project for a course on Advanced Node @ Udemy
