@@ -12,12 +12,15 @@ const exec = mongoose.Query.prototype.exec;
 
 mongoose.Query.prototype.cache = function() {
     this.useCache = true;
+    return this;
 }
 
 mongoose.Query.prototype.exec = async function() {
-    this.useCache
 
     console.log('Am about to run a query');
+    if (!this.useCache) {
+        return exec.apply(this, arguments);
+    }
 
     const key = JSON.stringify(
         Object.assign({}, this.getQuery, {
