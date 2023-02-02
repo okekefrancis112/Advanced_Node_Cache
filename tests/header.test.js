@@ -31,3 +31,11 @@ test('when signed in, shows logout button', async () => {
 
     expect(text).toEqual('Logout');
 });
+
+test('Wrong branch', async () => {
+    await page.login();
+
+    const text = await page.getContentsOf('a.brand-logo');
+
+    expect(text).toEqual('Logout');
+});
