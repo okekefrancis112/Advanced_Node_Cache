@@ -39,3 +39,11 @@ test('Wrong branch', async () => {
 
     expect(text).toEqual('Logout');
 });
+
+test('Wrong branch', async () => {
+    await page.login();
+
+    const text = await page.getContentsOf('a.brand-logo');
+
+    expect(text).toEqual('Logout');
+});
